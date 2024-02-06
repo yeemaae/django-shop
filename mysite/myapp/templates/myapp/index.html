@@ -9,7 +9,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
 </head>
-<body>
+<body class="bg-sky-500">
     <h1>This is index template!</h1>
     {% for item in items %}
     <a href="{% url 'myapp:detail' item.id %}">
