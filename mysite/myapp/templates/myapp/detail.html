@@ -1,19 +1,9 @@
+{% extends 'myapp/base.html' %}
 {% load static %}
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="{% static 'myapp/style.css' %}">
 
-</head>
-<body>
+{% block content %}
     This is detail template FOR
     <h2> name: {{item.name}} </h2>
     <h3> price: {{item.price}}</h3>
     <p> price: {{item.description}}</p>
-</body>
-</html>
+{% endblock content %}
