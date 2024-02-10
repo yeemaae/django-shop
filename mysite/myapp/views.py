@@ -31,11 +31,10 @@ def add_item(request):
     return render(request, "myapp/additem.html")
 
 
+
+
 def update_item(request, id):
     item = Product.objects.get(id=id)
-    context = {
-        "item": item
-    }
     if request.method == "POST":
         item.name = request.POST.get("name")
         item.price = request.POST.get("price")
@@ -43,5 +42,18 @@ def update_item(request, id):
         item.image = request.FILES.get("upload", item.image)
         item.save()
         return redirect("/myapp/")
+    context = {
+        "item": item
+    }
     return render(request, "myapp/updateitem.html", context=context)
 
+
+def delete_item(request, id):
+    item = Product.objects.get(id=id)
+    if request.method == "POST":
+        item.delete()
+        return redirect("/myapp/")
+    context = {
+        "item": item
+    }
+    return render(request, "myapp/deleteitem.html", context=context)
