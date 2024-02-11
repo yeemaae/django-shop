@@ -7,9 +7,9 @@
         {% csrf_token %}
         <div class="mb-2">
             <label class="block text-gray-700 text-sm font-bold mb-2">Username</label>
-            <p class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.username }}</p>
+            <p class="focus:outline-none shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.username }}</p>
             <label class="block text-gray-700 text-sm font-bold mt-5 mb-2">Password</label>
-            <p class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.password }}</p>
+            <p class="focus:outline-none shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700 leading-tight">{{ form.password }}</p>
         </div>
         <button class="bg-green-500 text-white px-5 py-2" type="submit">Login</button>
     </form>

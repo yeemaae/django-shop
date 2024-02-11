@@ -1,6 +1,8 @@
+from django.contrib.auth.views import LoginView
 from django.shortcuts import render, redirect
 from django.contrib.auth import login
-from .forms import NewUserForm
+from .forms import NewUserForm, MyUserForm
+from .models import Profile
 from django.contrib.auth.decorators import login_required
 
 
@@ -20,4 +22,15 @@ def register(request):
 
 @login_required
 def profile(request):
-    return render(request, 'users/profile.html')
+    if request.method == "POST":
+        contact_number = request.POST.get("number")
+        image = request.FILES["upload"]
+        user = request.user
+        profile = Profile(user=user, contact_number=contact_number, image=image)
+        profile.save()
+    return render(request, "users/profile.html")
+
+
+class MyLoginView(LoginView):
+    form_class = MyUserForm
+    redirect_authenticated_user = True
