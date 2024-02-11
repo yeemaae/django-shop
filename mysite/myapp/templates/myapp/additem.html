@@ -8,11 +8,11 @@
         {% csrf_token %}
         <div class="mb-4">
             <label class="block text-gray-700 text-md font-bold mb-2" for="name">Item Name</label>
-            <input class="shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="text" placeholder="Name..." name="name" id="name">
+            <input class="focus:outline-none shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="text" placeholder="Name..." name="name" id="name">
             <label class="block text-gray-700 text-md font-bold mb-2" for="price">Item Price</label>
-            <input class="shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="number" placeholder="Price..." name="price" id="price">
+            <input class="focus:outline-none shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="number" placeholder="Price..." name="price" id="price">
             <label class="block text-gray-700 text-md font-bold mb-2" for="description">Item Description</label>
-            <input class="shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="text" placeholder="Description..." name="description" id="description">
+            <input class="focus:outline-none shadow-appearance-none border-rounded py-2 px-3 mr-10 text-gray-700" type="text" placeholder="Description..." name="description" id="description">
             <label class="block text-gray-700 text-md font-bold mb-2" for="upload">Item Image</label>
             <input class="block mt-4" type="file" accept="image/*" name="upload" id="upload">
             <button class="block bg-green-600 text-white p-3 mt-4" type="submit" name="add_item" value="add_item" >Add Item</button>

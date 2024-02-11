@@ -4,6 +4,7 @@ from django.contrib.auth import login
 from .forms import NewUserForm, MyUserForm
 from .models import Profile
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 
 # Create your views here.
@@ -34,3 +35,11 @@ def profile(request):
 class MyLoginView(LoginView):
     form_class = MyUserForm
     redirect_authenticated_user = True
+
+
+def seller_profile(request, id):
+    seller = User.objects.get(id=id)
+
+    context = {"seller": seller}
+
+    return render(request, 'users/sellerprofile.html', context)
